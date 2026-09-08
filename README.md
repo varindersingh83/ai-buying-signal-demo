@@ -6,6 +6,8 @@ Job-specific MVP demonstrating a narrow slice of an AI automation engineer brief
 
 The demo receives visitor events, scores intent from visible evidence, shows the recommended CRM action, and exposes mock-mode status for the AI and CRM adapters. The interface is designed for an operator who needs to understand why a visitor is interesting without reading workflow logs.
 
+The demo login accepts a generic username and password. Submitting it creates a visitor event, mock Salesforce lead, mock email, mock Slack notification, and n8n-ready event.
+
 ## Demo boundary
 
 This is a portfolio/demo artifact, not a production deployment. Salesforce, Slack, Firecrawl, email, OpenRouter, and Ollama are documented integration points; the current default is mock mode. The full sanitized brief is in `docs/job-description.md`.
@@ -41,3 +43,10 @@ The Dockerfile and `railway.json` are included for Railway. Start with `AI_MODE=
 - Automated outbound sales messages.
 - Production security, deliverability, scale, or model-accuracy claims.
 
+## Mock email and n8n
+
+High-intent events appear in the in-memory mock mail activity and notification panel. Import `n8n-workflow.json` into local n8n; it exposes a visitor webhook and forwards the payload to the app's mock processing endpoint.
+
+## Optional live OpenRouter mode
+
+Set `AI_MODE=live` only after confirming the OpenRouter account-level $1 limit. Each demo request has a local estimated-cost guard of $0.01 and will not call the provider after the configured cap is reached. The default remains `AI_MODE=mock`.
