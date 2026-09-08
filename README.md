@@ -4,7 +4,7 @@ Job-specific MVP demonstrating a narrow slice of an AI automation engineer brief
 
 ## What it does
 
-The demo receives visitor events, scores intent from visible evidence, shows the recommended CRM action, and exposes mock-mode status for the AI and CRM adapters. The interface is designed for an operator who needs to understand why a visitor is interesting without reading workflow logs.
+The demo receives visitor events, scores intent from visible evidence, shows the recommended CRM action, and exposes mock-mode status for the AI and CRM adapters. The interface is designed for an operator who needs to understand why a visitor is interesting without reading workflow logs. It starts with an empty event stream; every event shown after that comes from a login or tracking request made during the current run.
 
 The demo login accepts a generic username and password. Submitting it creates a visitor event, mock Salesforce lead, mock email, mock Slack notification, and n8n-ready event.
 

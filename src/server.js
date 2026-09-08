@@ -10,11 +10,7 @@ let aiSpent = 0;
 const crmLeads = [];
 const mail = [];
 const notifications = [];
-const events = [
-  { id: "evt-001", email: "alex@example.com", company: "Northstar Logistics", pages: ["/pricing", "/integrations", "/security"], minutes: 8, visits: 3 },
-  { id: "evt-002", email: "sam@example.com", company: "Acme Studio", pages: ["/home"], minutes: 1, visits: 1 },
-  { id: "evt-003", email: "riley@example.com", company: "Harbor Health", pages: ["/pricing", "/case-studies"], minutes: 5, visits: 2 }
-];
+const events = [];
 function requestIp(req) { return (req.headers["x-forwarded-for"] || req.socket.remoteAddress || "0.0.0.0").split(",")[0].trim(); }
 function maskIp(ip) { const parts=ip.replace("::ffff:","").split("."); return parts.length===4 ? `${parts[0]}.${parts[1]}.x.x` : "masked"; }
 function demoRegion(ip, username="") { const hint=username.toLowerCase(); if(hint.includes("eu")) return "EU"; if(hint.includes("us")) return "US"; const last=Number(ip.split(".").pop()); return Number.isFinite(last)&&last%2===0 ? "EU" : "US"; }
