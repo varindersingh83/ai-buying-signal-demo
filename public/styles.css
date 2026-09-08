@@ -4,3 +4,8 @@
 .web-card label{display:block;width:100%;color:#63746c;font-size:.82rem;font-weight:800}
 .web-card input{display:block;width:100%;height:44px;margin-top:6px;padding:0 13px;background:#e8f2eb;border:1px solid #c9d9ce;border-radius:12px;color:#263b31}
 .web-card button{width:100%;height:44px;margin-top:2px}
+:root{--modal-control-height:44px}
+.modal-card label{display:block;margin-top:22px;color:#63746c;font-size:.82rem;font-weight:800}
+.modal-card input{display:block;width:100%;height:var(--modal-control-height);margin-top:7px;padding:0 13px;border:1px solid #c4d6ca;border-radius:12px;background:#e4f0e7;color:#25342f;box-shadow:inset 2px 2px 5px #c5d5ca,inset -2px -2px 5px #fff}
+.modal-card #saveConnector{width:100%;height:var(--modal-control-height);margin-top:14px}
+.modal-card .close{border:0;border-radius:12px;font-size:1.2rem;line-height:1;background:#d6e8db;color:#294338;box-shadow:inset 2px 2px 4px #fff,inset -2px -2px 4px #b4cabc}
