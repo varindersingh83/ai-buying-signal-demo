@@ -49,6 +49,8 @@ The Dockerfile and `railway.json` are included for Railway. Start with `AI_MODE=
 
 High-intent events appear in the in-memory mock mail and Twilio activity panel. Mailpit is included as a local SMTP inbox for future SMTP delivery testing; the default app route remains safe mock mode. Import `n8n-workflow.json` into local n8n; it exposes a visitor webhook and forwards the payload to the app's mock processing endpoint.
 
+When running with Docker Compose, high-intent mock emails are also delivered to Mailpit automatically. Set `MAILPIT_ENABLED=true` and `MAILPIT_URL=http://localhost:8025` for a locally running Node process, or use `MAILPIT_URL=http://mailpit:8025` inside Docker.
+
 ## Optional live OpenRouter mode
 
 Set `AI_MODE=live` only after confirming the OpenRouter account-level $1 limit. Each demo request has a local estimated-cost guard of $0.01 and will not call the provider after the configured cap is reached. The default remains `AI_MODE=mock`.
