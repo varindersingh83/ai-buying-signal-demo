@@ -31,7 +31,7 @@ Open `http://localhost:3000`. Docker also starts local n8n:
 docker compose up --build
 ```
 
-App: `http://localhost:3000` · n8n: `http://localhost:5678`
+App: `http://localhost:3000` · n8n: `http://localhost:5678` · Mailpit inbox: `http://localhost:8025`
 
 ## Railway
 
@@ -45,9 +45,9 @@ The Dockerfile and `railway.json` are included for Railway. Start with `AI_MODE=
 - Automated outbound sales messages.
 - Production security, deliverability, scale, or model-accuracy claims.
 
-## Mock email and n8n
+## Mock email, Twilio, and n8n
 
-High-intent events appear in the in-memory mock mail activity and notification panel. Import `n8n-workflow.json` into local n8n; it exposes a visitor webhook and forwards the payload to the app's mock processing endpoint.
+High-intent events appear in the in-memory mock mail and Twilio activity panel. Mailpit is included as a local SMTP inbox for future SMTP delivery testing; the default app route remains safe mock mode. Import `n8n-workflow.json` into local n8n; it exposes a visitor webhook and forwards the payload to the app's mock processing endpoint.
 
 ## Optional live OpenRouter mode
 
