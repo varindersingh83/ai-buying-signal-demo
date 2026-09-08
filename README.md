@@ -8,6 +8,8 @@ The demo receives visitor events, scores intent from visible evidence, shows the
 
 The demo login accepts a generic username and password. Submitting it creates a visitor event, mock Salesforce lead, mock email, mock Slack notification, and n8n-ready event.
 
+The server also exposes a small tracking adapter at `/tracking.js`. It masks the observed IP before storing it, assigns a coarse demo region, and routes US and EU examples differently. Use usernames containing `us` or `eu` to exercise both demo paths; this is deterministic mock geolocation, not a production IP geolocation service.
+
 ## Demo boundary
 
 This is a portfolio/demo artifact, not a production deployment. Salesforce, Slack, Firecrawl, email, OpenRouter, and Ollama are documented integration points; the current default is mock mode. The full sanitized brief is in `docs/job-description.md`.
